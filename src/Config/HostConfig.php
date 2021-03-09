@@ -9,6 +9,6 @@ class HostConfig
         public int $port,
         public string $user,
         public string $path,
-    )
-    {}
+    ) {
+    }
 }

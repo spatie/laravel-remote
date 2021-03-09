@@ -18,7 +18,7 @@ class RemoteCommand extends Command
         $hostConfig = RemoteConfig::getHost($this->option('host'));
 
         Ssh::create($hostConfig->user, $hostConfig->host)
-            ->onOutput(function($type, $line) {
+            ->onOutput(function ($type, $line) {
                 echo $line;
             })
             ->usePort($hostConfig->port)

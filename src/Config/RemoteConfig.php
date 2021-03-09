@@ -3,7 +3,6 @@
 
 namespace Spatie\Remote\Config;
 
-
 class RemoteConfig
 {
     public static function getHost($hostName): HostConfig
