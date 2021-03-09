@@ -43,7 +43,7 @@ class RemoteCommand extends Command
     {
         $command = $this->argument('rawCommand');
 
-        if (!$this->option('raw')) {
+        if (! $this->option('raw')) {
             $command = "php artisan {$command}";
         }
 
@@ -69,7 +69,6 @@ class RemoteCommand extends Command
             }
 
             $this->output->write('<fg=red>' . trim($line) . '</>' . PHP_EOL);
-
         }
     }
 }
