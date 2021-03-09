@@ -40,6 +40,12 @@ This is the contents of the published config file:
 ```php
 return [
     /*
+     * This host will be used if none is specified
+     * when executing the `remote` command.
+     */
+    'default_host' => 'default',
+
+    /*
      * Here you can define the hosts where the commands should be executed.
      */
     'hosts' => [
@@ -79,9 +85,9 @@ Here we will get a list of files on the server.
 php artisan remote ls --raw
 ```
 
-### Using multiple hosts
+### Using another hosts
 
-You can define multiple hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.
+You can define hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.
 
 ```bash
 php artisan remote clear:cache --host=my-other-host
