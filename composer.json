@@ -16,13 +16,15 @@
     ],
     "require": {
         "php": "^8.0",
+        "illuminate/contracts": "^8.0",
         "spatie/laravel-package-tools": "^1.1",
-        "illuminate/contracts": "^8.0"
+        "spatie/ssh": "^1.5"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.3",
         "spatie/laravel-ray": "^1.9",
+        "spatie/ray": "^1.21",
         "vimeo/psalm": "^4.4"
     },
     "autoload": {
@@ -48,10 +50,7 @@
         "laravel": {
             "providers": [
                 "Spatie\\Remote\\RemoteServiceProvider"
-            ],
-            "aliases": {
-                "Remote": "Spatie\\Remote\\RemoteFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
