@@ -40,7 +40,7 @@ class RemoteCommand extends Command
     {
         $command = $this->argument('rawCommand');
 
-        if (!$this->option('raw')) {
+        if (! $this->option('raw')) {
             $command = "php artisan {$command}";
         }
 

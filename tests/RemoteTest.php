@@ -15,7 +15,7 @@ class RemoteTest extends TestCase
         parent::setUp();
 
         config()->set('remote.hosts.default', [
-            'host'=> 'example.com',
+            'host' => 'example.com',
             'port' => 22,
             'user' => 'user',
             'path' => '/home/forge/test-path',
