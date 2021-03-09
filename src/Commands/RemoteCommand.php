@@ -53,7 +53,7 @@ class RemoteCommand extends Command
         ];
     }
 
-    protected function displayOutput($type, $line)
+    protected function displayOutput($type, $line): void
     {
         $lines = explode("\n", $line);
 
@@ -69,7 +69,6 @@ class RemoteCommand extends Command
             }
 
             $this->output->write('<fg=red>' . trim($line) . '</>' . PHP_EOL);
-
         }
     }
 }
