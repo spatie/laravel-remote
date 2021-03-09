@@ -18,7 +18,6 @@
         "php": "^8.0",
         "illuminate/contracts": "^8.0",
         "spatie/laravel-package-tools": "^1.1",
-        "spatie/phpunit-snapshot-assertions": "^4.2",
         "spatie/ssh": "^1.5"
     },
     "require-dev": {
@@ -26,6 +25,7 @@
         "phpunit/phpunit": "^9.3",
         "spatie/laravel-ray": "^1.9",
         "spatie/ray": "^1.21",
+        "spatie/phpunit-snapshot-assertions": "^4.2",
         "vimeo/psalm": "^4.4"
     },
     "autoload": {
