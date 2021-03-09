@@ -9,7 +9,7 @@ use Spatie\Ssh\Ssh;
 
 class RemoteCommand extends Command
 {
-    public $signature = 'remote {rawCommand} {--host=default} {--artisan}';
+    public $signature = 'remote {rawCommand} {--host=default} {--raw} {--debug}';
 
     public $description = 'Execute commands on a remote server';
 
@@ -17,20 +17,31 @@ class RemoteCommand extends Command
     {
         $hostConfig = RemoteConfig::getHost($this->option('host'));
 
-        Ssh::create($hostConfig->user, $hostConfig->host)
+        $ssh = Ssh::create($hostConfig->user, $hostConfig->host)
             ->onOutput(function ($type, $line) {
                 echo $line;
             })
-            ->usePort($hostConfig->port)
-            ->execute($this->getCommandToExecute($hostConfig));
+            ->usePort($hostConfig->port);
+
+        $commandsToExecute = $this->getCommandsToExecute($hostConfig);
+
+        if ($this->option('debug')) {
+            $this->line($ssh->getExecuteCommand($commandsToExecute));
+
+            return 0;
+        }
+
+        $process = $ssh->execute($this->getCommandsToExecute($hostConfig));
+
+        return $process->getExitCode();
     }
 
-    protected function getCommandToExecute(HostConfig $hostConfig): array
+    protected function getCommandsToExecute(HostConfig $hostConfig): array
     {
         $command = $this->argument('rawCommand');
 
-        if ($this->option('artisan')) {
-            $command = "php artisan '{$command}'";
+        if (!$this->option('raw')) {
+            $command = "php artisan {$command}";
         }
 
         return [

@@ -18,6 +18,7 @@
         "php": "^8.0",
         "illuminate/contracts": "^8.0",
         "spatie/laravel-package-tools": "^1.1",
+        "spatie/phpunit-snapshot-assertions": "^4.2",
         "spatie/ssh": "^1.5"
     },
     "require-dev": {

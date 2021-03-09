@@ -12,11 +12,4 @@ return [
             'path' => env('REMOTE_PATH'),
         ]
     ],
-
-    'command-aliases' => [
-        'test' => [
-            'ls',
-            'whoami',
-        ]
-    ]
 ];
