@@ -3,7 +3,6 @@
 
 namespace Spatie\Remote\Exceptions;
 
-
 use Exception;
 
 class CouldNotExecuteCommand extends Exception

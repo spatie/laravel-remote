@@ -15,7 +15,7 @@ class RemoteConfig
             throw CouldNotExecuteCommand::hostNotFoundInConfig($hostName);
         }
 
-        foreach(['host', 'port', 'user', 'path'] as $valueName) {
+        foreach (['host', 'port', 'user', 'path'] as $valueName) {
             if (is_null($configValues[$valueName])) {
                 throw CouldNotExecuteCommand::requiredConfigValueNotSet($valueName, $valueName);
             }
