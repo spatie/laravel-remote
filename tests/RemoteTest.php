@@ -48,7 +48,6 @@ class RemoteTest extends TestCase
         Artisan::call('remote test --debug');
     }
 
-
     /** @test */
     public function it_will_throw_an_exception_if_a_required_property_of_a_host_is_not_set()
     {
