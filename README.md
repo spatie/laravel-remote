@@ -5,8 +5,13 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-remote/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-remote/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-remote.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-remote)
 
+This package provides a command to execute Artisan command on a remote server.
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Here's an example that will clear the cache on the remote server.
+
+```bash
+php artisan remote clear:cache
+```
 
 ## Support us
 
@@ -24,14 +29,8 @@ You can install the package via composer:
 composer require spatie/laravel-remote
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Spatie\Remote\RemoteServiceProvider" --tag="laravel-remote-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="Spatie\Remote\RemoteServiceProvider" --tag="laravel-remote-config"
 ```
@@ -40,14 +39,52 @@ This is the contents of the published config file:
 
 ```php
 return [
+    /*
+     * Here you can define the hosts where the commands should be executed.
+     */
+    'hosts' => [
+        'default' => [
+            'host' => env('REMOTE_HOST'),
+
+            'port' => env('REMOTE_PORT', 22),
+
+            'user' => env('REMOTE_USER'),
+
+            /*
+             * The package will cd to the given path before executing the given command.
+             */
+            'path' => env('REMOTE_PATH'),
+        ]
+    ],
 ];
 ```
 
 ## Usage
 
-```php
-$laravel-remote = new Spatie\Remote();
-echo $laravel-remote->echoPhrase('Hello, Spatie!');
+To execute a command on the remote server use the `remote` Artisan command. You can pass any artisan command that you would like to execute on the server.
+
+Here's an example where we clear the cache.
+
+```bash
+php artisan remote clear:cache
+```
+
+### Executing raw commands
+
+If you want to execute a bash command, use the `--raw` option.
+
+Here we will get a list of files on the server.
+
+```bash
+php artisan remote ls --raw
+```
+
+### Using multiple hosts
+
+You can define multiple hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.
+
+```bash
+php artisan remote clear:cache --host=my-other-host
 ```
 
 ## Testing
