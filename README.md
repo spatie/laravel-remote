@@ -93,6 +93,14 @@ You can define hosts in the config file. By default, the `default` host is used.
 php artisan remote clear:cache --host=my-other-host
 ```
 
+### Using options in remote commands
+
+If you need to use flags or options in the command you're trying to execue, you can wrap the entire command in quotes:
+
+```bash
+php artisan remote --raw "ls -a"
+```
+
 ## Testing
 
 ```bash
