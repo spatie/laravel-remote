@@ -10,7 +10,7 @@ This package provides a command to execute Artisan command on a remote server.
 Here's an example that will clear the cache on the remote server.
 
 ```bash
-php artisan remote clear:cache
+php artisan remote cache:clear
 ```
 
 ## Support us
@@ -72,7 +72,7 @@ To execute a command on the remote server use the `remote` Artisan command. You 
 Here's an example where we clear the cache.
 
 ```bash
-php artisan remote clear:cache
+php artisan remote cache:clear
 ```
 
 ### Executing raw commands
@@ -90,7 +90,7 @@ php artisan remote ls --raw
 You can define hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.
 
 ```bash
-php artisan remote clear:cache --host=my-other-host
+php artisan remote cache:clear --host=my-other-host
 ```
 
 ### Using options in remote commands
