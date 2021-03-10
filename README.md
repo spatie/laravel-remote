@@ -32,7 +32,7 @@ composer require spatie/laravel-remote
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Remote\RemoteServiceProvider" --tag="laravel-remote-config"
+php artisan vendor:publish --provider="Spatie\Remote\RemoteServiceProvider" --tag="remote-config"
 ```
 
 This is the contents of the published config file:
