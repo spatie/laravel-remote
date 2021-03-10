@@ -85,7 +85,7 @@ Here we will get a list of files on the server.
 php artisan remote ls --raw
 ```
 
-### Using another hosts
+### Using another host
 
 You can define hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.
 
