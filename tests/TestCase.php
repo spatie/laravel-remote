@@ -7,7 +7,7 @@ use Spatie\Remote\RemoteServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             RemoteServiceProvider::class,
