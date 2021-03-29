@@ -64,6 +64,7 @@ class RemoteCommand extends Command
 
             if ($type == Process::OUT) {
                 $this->output->write(trim($line) . PHP_EOL);
+
                 continue;
             }
 
