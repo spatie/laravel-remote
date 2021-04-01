@@ -44,6 +44,7 @@ class RemoteTest extends TestCase
         config()->set('remote.hosts', []);
 
         $this->expectException(CouldNotExecuteCommand::class);
+        $this->expectExceptionMessage("Could not find a host named `default` in the config file");
 
         Artisan::call('remote test --debug');
     }
@@ -51,9 +52,10 @@ class RemoteTest extends TestCase
     /** @test */
     public function it_will_throw_an_exception_if_a_required_property_of_a_host_is_not_set()
     {
-        config()->set('remote.hosts', []);
+        config()->set('remote.hosts.default.port', null);
 
         $this->expectException(CouldNotExecuteCommand::class);
+        $this->expectExceptionMessage("The required config value `port` is not set for host `default`");
 
         Artisan::call('remote test --debug');
     }
