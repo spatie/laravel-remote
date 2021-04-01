@@ -20,11 +20,6 @@ class RemoteConfig
             }
         }
 
-        return new HostConfig(
-            $configValues['host'],
-            $configValues['port'],
-            $configValues['user'],
-            $configValues['path'],
-        );
+        return new HostConfig(...$configValues);
     }
 }
