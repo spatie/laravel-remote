@@ -34,7 +34,7 @@ class RemoteCommand extends Command
             return 0;
         }
 
-        $process = $ssh->execute($this->getCommandsToExecute($hostConfig));
+        $process = $ssh->execute($commandsToExecute);
 
         return $process->getExitCode();
     }
