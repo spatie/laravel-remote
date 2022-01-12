@@ -1,0 +1,6 @@
+ssh -p 22 user@example.com 'bash -se' << \EOF-SPATIE-SSH
+cd /home/forge/test-path
+#!/bin/bash
+whoami
+pwd
+EOF-SPATIE-SSH

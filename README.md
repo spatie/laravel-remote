@@ -85,6 +85,16 @@ Here we will get a list of files on the server.
 php artisan remote ls --raw
 ```
 
+### Executing bash script
+
+If you want to execute a bash script, use the `--script` option.
+
+You need to provide a path to the script as an argument .
+
+```bash
+php artisan remote --script ../path/local-script.sh
+```
+
 ### Using another host
 
 You can define hosts in the config file. By default, the `default` host is used. To execute a command on another host use the `--host` option.

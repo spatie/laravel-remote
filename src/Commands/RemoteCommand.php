@@ -10,7 +10,7 @@ use Symfony\Component\Process\Process;
 
 class RemoteCommand extends Command
 {
-    public $signature = 'remote {rawCommand} {--host=} {--raw} {--debug}';
+    public $signature = 'remote {rawCommand} {--host=} {--raw} {--debug} {--script}';
 
     public $description = 'Execute commands on a remote server';
 
@@ -43,10 +43,15 @@ class RemoteCommand extends Command
     {
         $command = $this->argument('rawCommand');
 
-        if (! $this->option('raw')) {
+        if (! $this->option('raw') && !$this->option('script')) {
             $command = "php artisan {$command}";
         }
 
+        if($this->option('script')){
+            $command = file_get_contents($command);
+        }
+
+        
         return [
             "cd {$hostConfig->path}",
             $command,

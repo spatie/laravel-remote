@@ -39,6 +39,15 @@ class RemoteTest extends TestCase
     }
 
     /** @test */
+    public function it_can_execute_a_script()
+    {
+
+        Artisan::call('remote --debug --script tests/__scripts__/test-local-script.sh');
+
+        $this->assertMatchesSnapshot(Artisan::output());
+    }
+
+    /** @test */
     public function it_will_throw_an_exception_if_a_host_does_not_exist()
     {
         config()->set('remote.hosts', []);
