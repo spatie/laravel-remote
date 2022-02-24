@@ -14,7 +14,7 @@ class RemoteConfig
             throw CouldNotExecuteCommand::hostNotFoundInConfig($hostName);
         }
 
-        $configValues = array_merge([$hostName], $configValues, config('remote.defaults'));
+        $configValues = array_merge(['name' => $hostName], $configValues, config('remote.defaults'));
 
         foreach (['host', 'port', 'user', 'path'] as $configValue) {
             if (is_null($configValues[$configValue])) {
