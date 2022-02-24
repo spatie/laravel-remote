@@ -13,11 +13,14 @@ return [
      */
     'defaults' => [
         'port' => env('REMOTE_PORT', 22),
+
         'user' => env('REMOTE_USER'),
         /*
          * The package will cd to the given path before executing the given command.
          */
         'path' => env('REMOTE_PATH'),
+
+        'tag' => 'tag',
     ],
 
     /*
