@@ -38,7 +38,7 @@ class RemoteTest extends TestCase
         $host = config('remote.hosts.default.host');
 
         $this->artisan('remote test --debug')
-            ->expectsConfirmation("Are you sure you want to execute this command on the following remote server {$host}?", 'no')
+            ->expectsConfirmation("Are you sure you want to execute this command on {$host}?", 'no')
             ->expectsOutput('Remote command aborted')
             ->assertExitCode(0);
     }
@@ -51,7 +51,7 @@ class RemoteTest extends TestCase
         $host = config('remote.hosts.default.host');
 
         $this->artisan('remote test --debug')
-            ->expectsConfirmation("Are you sure you want to execute this command on the following remote server {$host}?", 'yes')
+            ->expectsConfirmation("Are you sure you want to execute this command on {$host}?", 'yes')
             ->doesntExpectOutput("Remote command aborted");
     }
 
