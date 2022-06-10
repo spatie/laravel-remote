@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.2.0 - 2022-06-10
+
+### What's Changed
+
+- Added confirmation prompt by @AbdelkaderBah in https://github.com/spatie/laravel-remote/pull/13
+
+### New Contributors
+
+- @AbdelkaderBah made their first contribution in https://github.com/spatie/laravel-remote/pull/13
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.1.0...1.2.0
+
 ## 1.1.0 - 2022-01-19
 
 - allow Laravel 9
