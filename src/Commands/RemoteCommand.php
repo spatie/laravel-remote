@@ -28,6 +28,10 @@ class RemoteCommand extends Command
 
         $commandsToExecute = $this->getCommandsToExecute($hostConfig);
 
+        if ($this->failsConfirmationPrompt($hostConfig)) {
+            return $this->failedConfirmationPromptOutput();
+        }
+
         if ($this->option('debug')) {
             $this->line($ssh->getExecuteCommand($commandsToExecute));
 
@@ -70,5 +74,27 @@ class RemoteCommand extends Command
 
             $this->output->write('<fg=red>' . trim($line) . '</>' . PHP_EOL);
         }
+    }
+
+    /**
+     * @param HostConfig $hostConfig
+     * @return bool|null
+     */
+    private function failsConfirmationPrompt(HostConfig $hostConfig): ?bool
+    {
+        if (!config('remote.needs_confirmation')) {
+            return false;
+        }
+
+        return !$this->confirm(
+            "Are you sure you want to execute this command on the following remote server {$hostConfig->host}?"
+        );
+    }
+
+    private function failedConfirmationPromptOutput(): int
+    {
+        $this->error('Remote command aborted');
+
+        return 0;
     }
 }

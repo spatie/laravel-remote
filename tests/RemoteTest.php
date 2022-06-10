@@ -31,6 +31,31 @@ class RemoteTest extends TestCase
     }
 
     /** @test */
+    public function it_cannot_execute_a_remote_command_without_confirming_when_confirmation_option_is_on()
+    {
+        config()->set('remote.needs_confirmation', true);
+
+        $host = config('remote.hosts.default.host');
+
+        $this->artisan('remote test --debug')
+            ->expectsConfirmation("Are you sure you want to execute this command on the following remote server {$host}?", 'no')
+            ->expectsOutput('Remote command aborted')
+            ->assertExitCode(0);
+    }
+
+    /** @test */
+    public function it_can_execute_a_remote_command_with_confirming_when_confirmation_option_is_on()
+    {
+        config()->set('remote.needs_confirmation', true);
+
+        $host = config('remote.hosts.default.host');
+
+        $this->artisan('remote test --debug')
+            ->expectsConfirmation("Are you sure you want to execute this command on the following remote server {$host}?", 'yes')
+            ->doesntExpectOutput("Remote command aborted");
+    }
+
+    /** @test */
     public function it_can_execute_a_raw_command()
     {
         Artisan::call('remote test --debug --raw');

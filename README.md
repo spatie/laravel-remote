@@ -47,6 +47,11 @@ return [
      * when executing the `remote` command.
      */
     'default_host' => 'default',
+    
+    /*
+    * When set to true, A confirmation prompt will be shown before executing the `remote` command.
+    */
+    'needs_confirmation' => env('REMOTE_NEEDS_CONFIRMATION', false),
 
     /*
      * Here you can define the hosts where the commands should be executed.
