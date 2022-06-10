@@ -83,7 +83,7 @@ class RemoteCommand extends Command
         }
 
         return !$this->confirm(
-            "Are you sure you want to execute this command on the following remote server {$hostConfig->host}?"
+            "Are you sure you want to execute this command on {$hostConfig->host}?"
         );
     }
 
