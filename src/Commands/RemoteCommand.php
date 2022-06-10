@@ -76,11 +76,7 @@ class RemoteCommand extends Command
         }
     }
 
-    /**
-     * @param HostConfig $hostConfig
-     * @return bool|null
-     */
-    private function failsConfirmationPrompt(HostConfig $hostConfig): ?bool
+    protected function failsConfirmationPrompt(HostConfig $hostConfig): ?bool
     {
         if (!config('remote.needs_confirmation')) {
             return false;
@@ -91,7 +87,7 @@ class RemoteCommand extends Command
         );
     }
 
-    private function failedConfirmationPromptOutput(): int
+    protected function failedConfirmationPromptOutput(): int
     {
         $this->error('Remote command aborted');
 
