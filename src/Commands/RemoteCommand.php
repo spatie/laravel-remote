@@ -78,11 +78,11 @@ class RemoteCommand extends Command
 
     protected function failsConfirmationPrompt(HostConfig $hostConfig): ?bool
     {
-        if (!config('remote.needs_confirmation')) {
+        if (! config('remote.needs_confirmation')) {
             return false;
         }
 
-        return !$this->confirm(
+        return ! $this->confirm(
             "Are you sure you want to execute this command on the following remote server {$hostConfig->host}?"
         );
     }
