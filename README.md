@@ -103,7 +103,7 @@ php artisan remote cache:clear --host=my-other-host
 
 ### Using options in remote commands
 
-If you need to use flags or options in the command you're trying to execue, you can wrap the entire command in quotes:
+If you need to use flags or options in the command you're trying to execute, you can wrap the entire command in quotes:
 
 ```bash
 php artisan remote --raw "ls -a"
