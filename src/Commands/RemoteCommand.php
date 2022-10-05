@@ -26,6 +26,10 @@ class RemoteCommand extends Command
             })
             ->usePort($hostConfig->port);
 
+        if ($hostConfig->privateKeyPath) {
+            $ssh->usePrivateKey($hostConfig->privateKeyPath);
+        }
+
         $commandsToExecute = $this->getCommandsToExecute($hostConfig);
 
         if ($this->failsConfirmationPrompt($hostConfig)) {
