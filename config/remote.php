@@ -28,6 +28,11 @@ return [
              * The package will cd to the given path before executing the given command.
              */
             'path' => env('REMOTE_PATH'),
+
+            /*
+             * Optional. Path to the private key on your computer if your remote server requires it.
+             */
+            'private_key_path' => env('REMOTE_PRIVATE_KEY_PATH'),
         ]
     ],
 ];
