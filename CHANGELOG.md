@@ -2,6 +2,22 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.3.0 - 2022-10-07
+
+### What's Changed
+
+- Update .gitattributes by @angeljqv in https://github.com/spatie/laravel-remote/pull/14
+- Fix a small typo by @rafa1944 in https://github.com/spatie/laravel-remote/pull/15
+- Allow private key to be specified by @ziming in https://github.com/spatie/laravel-remote/pull/16
+
+### New Contributors
+
+- @angeljqv made their first contribution in https://github.com/spatie/laravel-remote/pull/14
+- @rafa1944 made their first contribution in https://github.com/spatie/laravel-remote/pull/15
+- @ziming made their first contribution in https://github.com/spatie/laravel-remote/pull/16
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.2.0...1.3.0
+
 ## 1.2.0 - 2022-06-10
 
 ### What's Changed
