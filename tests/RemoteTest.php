@@ -84,4 +84,21 @@ class RemoteTest extends TestCase
 
         Artisan::call('remote test --debug');
     }
+
+    /** @test */
+    public function it_can_get_the_config_with_dots()
+    {
+        config()->set('remote.hosts', [
+            'example.com' => [
+                'host' => 'example.com',
+                'port' => 22,
+                'user' => 'user',
+                'path' => '/home/forge/test-path',
+            ],
+        ]);
+
+        Artisan::call('remote test --debug --host=example.com');
+
+        $this->assertMatchesSnapshot(Artisan::output());
+    }
 }

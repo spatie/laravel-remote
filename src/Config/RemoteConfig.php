@@ -8,7 +8,8 @@ class RemoteConfig
 {
     public static function getHost(string $hostName): HostConfig
     {
-        $configValues = config("remote.hosts.{$hostName}");
+        $configValues = config("remote.hosts") ?? [];
+        $configValues = $configValues[$hostName] ?? null;
 
         if (is_null($configValues)) {
             throw CouldNotExecuteCommand::hostNotFoundInConfig($hostName);
