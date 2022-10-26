@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.3.1 - 2022-10-26
+
+### What's Changed
+
+- Update Readme about private_key_path config by @ziming in https://github.com/spatie/laravel-remote/pull/17
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.3.0...1.3.1
+
 ## 1.3.0 - 2022-10-07
 
 ### What's Changed
