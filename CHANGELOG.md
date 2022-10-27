@@ -2,6 +2,21 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.3.2 - 2022-10-27
+
+### What's Changed
+
+- feat: Allow ANSI on `artisan` calls to match local artisan. by @xiCO2k in https://github.com/spatie/laravel-remote/pull/20
+- PHP 8.2 Build by @sergiy-petrov in https://github.com/spatie/laravel-remote/pull/19
+- fix: Allow dots on hosts by @xiCO2k in https://github.com/spatie/laravel-remote/pull/18
+
+### New Contributors
+
+- @xiCO2k made their first contribution in https://github.com/spatie/laravel-remote/pull/20
+- @sergiy-petrov made their first contribution in https://github.com/spatie/laravel-remote/pull/19
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.3.1...1.3.2
+
 ## 1.3.1 - 2022-10-26
 
 ### What's Changed
