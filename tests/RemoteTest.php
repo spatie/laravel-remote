@@ -3,6 +3,7 @@
 namespace Spatie\Remote\Tests;
 
 use Illuminate\Support\Facades\Artisan;
+use Spatie\Remote\Commands\RemoteCommand;
 use Spatie\Remote\Exceptions\CouldNotExecuteCommand;
 use Spatie\Snapshots\MatchesSnapshots;
 
@@ -13,6 +14,8 @@ class RemoteTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
+
+        RemoteCommand::resolveTerminalWidthUsing(fn () => 50);
 
         config()->set('remote.hosts.default', [
             'host' => 'example.com',

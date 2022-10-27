@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Spatie\Remote\Config\HostConfig;
 use Spatie\Remote\Config\RemoteConfig;
 use Spatie\Ssh\Ssh;
+use Symfony\Component\Console\Terminal;
 use Symfony\Component\Process\Process;
 
 class RemoteCommand extends Command
@@ -13,6 +14,8 @@ class RemoteCommand extends Command
     public $signature = 'remote {rawCommand} {--host=} {--raw} {--debug}';
 
     public $description = 'Execute commands on a remote server';
+
+    protected static $terminalWidthResolver;
 
     public function handle()
     {
@@ -42,7 +45,9 @@ class RemoteCommand extends Command
             return 0;
         }
 
+        $this->output->write("\n");
         $process = $ssh->execute($commandsToExecute);
+        $this->output->write("\n");
 
         return $process->getExitCode();
     }
@@ -52,10 +57,11 @@ class RemoteCommand extends Command
         $command = $this->argument('rawCommand');
 
         if (! $this->option('raw')) {
-            $command = "php artisan {$command}";
+            $command = "php artisan {$command} --ansi";
         }
 
         return [
+            "export COLUMNS=". $this->getTerminalWidth(),
             "cd {$hostConfig->path}",
             $command,
         ];
@@ -65,13 +71,13 @@ class RemoteCommand extends Command
     {
         $lines = explode("\n", $line);
 
-        foreach ($lines as $line) {
+        foreach ($lines as $index => $line) {
             if (strlen(trim($line)) === 0) {
                 continue;
             }
 
             if ($type == Process::OUT) {
-                $this->output->write(trim($line) . PHP_EOL);
+                $this->output->write($line . PHP_EOL);
 
                 continue;
             }
@@ -96,5 +102,17 @@ class RemoteCommand extends Command
         $this->error('Remote command aborted');
 
         return 0;
+    }
+
+    protected function getTerminalWidth(): int
+    {
+        return is_null(static::$terminalWidthResolver)
+            ? (new Terminal)->getWidth()
+            : call_user_func(static::$terminalWidthResolver);
+    }
+
+    public static function resolveTerminalWidthUsing($resolver)
+    {
+        static::$terminalWidthResolver = $resolver;
     }
 }
