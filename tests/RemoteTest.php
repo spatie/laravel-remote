@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
-use Spatie\Remote\Commands\RemoteCommand;
-use Spatie\Remote\Exceptions\CouldNotExecuteCommand;
 
 use function Pest\Laravel\artisan;
+
+use Spatie\Remote\Commands\RemoteCommand;
+
+use Spatie\Remote\Exceptions\CouldNotExecuteCommand;
+
 use function Spatie\Snapshots\assertMatchesSnapshot;
 
 beforeEach(function () {
