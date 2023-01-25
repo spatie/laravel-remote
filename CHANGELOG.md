@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.3.3 - 2023-01-25
+
+- support L10
+
 ## 1.3.2 - 2022-10-27
 
 ### What's Changed
