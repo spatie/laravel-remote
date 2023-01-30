@@ -69,7 +69,7 @@ return [
             /*
              * Optional. Path to the private key on your computer if your remote server requires it.
              */
-            'private_key_path' => env('REMOTE_PRIVATE_KEY_PATH'),
+            'privateKeyPath' => env('REMOTE_PRIVATE_KEY_PATH'),
         ]
     ],
 ];
