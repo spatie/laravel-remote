@@ -42,7 +42,7 @@ return [
      * when executing the `remote` command.
      */
     'default_host' => 'default',
-    
+
     /*
     * When set to true, A confirmation prompt will be shown before executing the `remote` command.
     */
@@ -63,11 +63,16 @@ return [
              * The package will cd to the given path before executing the given command.
              */
             'path' => env('REMOTE_PATH'),
-            
+
             /*
              * Optional. Path to the private key on your computer if your remote server requires it.
              */
             'privateKeyPath' => env('REMOTE_PRIVATE_KEY_PATH'),
+
+            /*
+             * Optional. Path to the php binary on your remote server.
+             */
+            'phpPath' => env('REMOTE_PHP_PATH', 'php'),
         ]
     ],
 ];
@@ -129,8 +134,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Freek Van der Herten](https://github.com/freekmurze)
-- [All Contributors](../../contributors)
+-   [Freek Van der Herten](https://github.com/freekmurze)
+-   [All Contributors](../../contributors)
 
 ## License
 

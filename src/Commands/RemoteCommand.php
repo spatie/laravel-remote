@@ -57,7 +57,7 @@ class RemoteCommand extends Command
         $command = $this->argument('rawCommand');
 
         if (! $this->option('raw')) {
-            $command = "php artisan {$command} --ansi";
+            $command = "{$hostConfig->phpPath} artisan {$command} --ansi";
         }
 
         return [

@@ -86,3 +86,17 @@ it('can get the config with dots', function () {
 
     assertMatchesSnapshot(Artisan::output());
 });
+
+it('can execute a remote command with custom php path', function () {
+    config()->set('remote.hosts.default', [
+        'host' => 'example.com',
+        'port' => 22,
+        'user' => 'user',
+        'path' => '/home/forge/test-path',
+        'phpPath' => '/usr/bin/php8.3',
+    ]);
+
+    Artisan::call('remote test --debug');
+
+    assertMatchesSnapshot(Artisan::output());
+});

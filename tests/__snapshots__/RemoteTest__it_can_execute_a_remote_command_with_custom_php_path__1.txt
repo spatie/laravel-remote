@@ -1,0 +1,5 @@
+ssh -p 22 user@example.com 'bash -se' << \EOF-SPATIE-SSH
+export COLUMNS=50
+cd /home/forge/test-path
+/usr/bin/php8.3 artisan test --ansi
+EOF-SPATIE-SSH
