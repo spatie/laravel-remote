@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.3.4 - 2024-02-14
+
+### What's Changed
+
+* Update README to set private_key_path correctly by @marcwieland95 in https://github.com/spatie/laravel-remote/pull/22
+* Add support for custom PHP binary path by @LTKort in https://github.com/spatie/laravel-remote/pull/24
+
+### New Contributors
+
+* @marcwieland95 made their first contribution in https://github.com/spatie/laravel-remote/pull/22
+* @LTKort made their first contribution in https://github.com/spatie/laravel-remote/pull/24
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.3.3...1.3.4
+
 ## 1.3.3 - 2023-01-25
 
 - support L10
