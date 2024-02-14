@@ -68,6 +68,11 @@ return [
              * Optional. Path to the private key on your computer if your remote server requires it.
              */
             'privateKeyPath' => env('REMOTE_PRIVATE_KEY_PATH'),
+            
+            /*
+             * Optional. Path to the php binary on your remote server.
+             */
+            'phpPath' => env('REMOTE_PHP_PATH', 'php'),
         ]
     ],
 ];

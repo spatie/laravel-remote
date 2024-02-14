@@ -10,6 +10,7 @@ class HostConfig
         public string $user,
         public string $path,
         public ?string $privateKeyPath = null,
+        public ?string $phpPath = 'php',
     ) {
     }
 }

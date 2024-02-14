@@ -28,6 +28,11 @@ return [
              * The package will cd to the given path before executing the given command.
              */
             'path' => env('REMOTE_PATH'),
+
+            /*
+             * Optional. Path to the php binary on your remote server.
+             */
+            'phpPath' => env('REMOTE_PHP_PATH', 'php'),
         ]
     ],
 ];
