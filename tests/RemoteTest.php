@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Artisan;
 use function Pest\Laravel\artisan;
 
 use Spatie\Remote\Commands\RemoteCommand;
-
 use Spatie\Remote\Exceptions\CouldNotExecuteCommand;
 
 use function Spatie\Snapshots\assertMatchesSnapshot;
