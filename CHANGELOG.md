@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.4.1 - 2025-02-16
+
+### What's Changed
+
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-remote/pull/27
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.4.0...1.4.1
+
 ## 1.4.0 - 2024-02-27
 
 ### What's Changed
