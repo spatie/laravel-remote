@@ -99,3 +99,9 @@ it('can execute a remote command with custom php path', function () {
 
     assertMatchesSnapshot(Artisan::output());
 });
+
+it('can execute a remote command with jump host', function () {
+    Artisan::call('remote test --debug --jump=jumphost.example.com');
+
+    assertMatchesSnapshot(Artisan::output());
+});

@@ -1,0 +1,5 @@
+ssh -p 22 -J jumphost.example.com user@example.com 'bash -se' << \EOF-SPATIE-SSH
+export COLUMNS=50
+cd /home/forge/test-path
+php artisan test --ansi
+EOF-SPATIE-SSH
