@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.4.2 - 2026-02-01
+
+### What's Changed
+
+* Add jump host option by @enricodelazzari in #29
+* Fix Pest compatibility with Orchestra Testbench
+* Add PHP 8.5 support to test matrix
+
+**Full Changelog**: https://github.com/spatie/laravel-remote/compare/1.4.1...1.4.2
+
 ## 1.4.1 - 2025-02-16
 
 ### What's Changed
