@@ -106,6 +106,14 @@ You can define hosts in the config file. By default, the `default` host is used.
 php artisan remote cache:clear --host=my-other-host
 ```
 
+### Using a jump host
+
+If you need to connect through a jump host (bastion server), use the `--jump` option.
+
+```bash
+php artisan remote cache:clear --jump=jumphost.example.com
+```
+
 ### Using options in remote commands
 
 If you need to use flags or options in the command you're trying to execute, you can wrap the entire command in quotes:

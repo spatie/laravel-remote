@@ -11,7 +11,7 @@ use Symfony\Component\Process\Process;
 
 class RemoteCommand extends Command
 {
-    public $signature = 'remote {rawCommand} {--host=} {--raw} {--debug}';
+    public $signature = 'remote {rawCommand} {--host=} {--raw} {--debug} {--jump=}';
 
     public $description = 'Execute commands on a remote server';
 
@@ -31,6 +31,10 @@ class RemoteCommand extends Command
 
         if ($hostConfig->privateKeyPath) {
             $ssh->usePrivateKey($hostConfig->privateKeyPath);
+        }
+
+        if ($jump = $this->option('jump')) {
+            $ssh->useJumpHost($jump);
         }
 
         $commandsToExecute = $this->getCommandsToExecute($hostConfig);
