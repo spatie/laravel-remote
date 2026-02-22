@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-remote` will be documented in this file.
 
+## 1.5.0 - 2026-02-22
+
+Add Laravel 13 support
+
 ## 1.4.2 - 2026-02-01
 
 ### What's Changed
